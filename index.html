@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frame Calculator — Exact Wood Dimensions for Picture Frames</title>
+  <meta name="description" content="Calculate exact wood dimensions for custom picture frames. Get your complete cut list, rabbet specs, glazing size, and material estimates instantly.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <a href="#calculator" class="skip-link">Skip to calculator</a>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="header-inner">
+        <a href="#" class="logo" aria-label="Frame Calculator — home">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false">
+            <rect x="1.5" y="1.5" width="25" height="25" rx="3.5" stroke="currentColor" stroke-width="2.5"/>
+            <rect x="7" y="7" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <span>Frame Calculator</span>
+        </a>
+        <nav aria-label="Page sections">
+          <a href="#anatomy">How It Works</a>
+          <a href="#calculator" class="nav-cta">Calculate</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ═══ HERO ═══ -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">For woodworkers &amp; DIY framers</div>
+          <h1 id="hero-heading">Every dimension you need.<br>Before you cut a single piece.</h1>
+          <p class="hero-sub">Enter your artwork and wood stock measurements — get the exact cut lengths, rabbet specs, glazing size, and material estimate. No guessing. No wasted wood.</p>
+          <div class="hero-actions">
+            <a href="#calculator" class="btn btn-primary btn-lg">Calculate My Frame</a>
+            <a href="#anatomy" class="btn btn-ghost btn-lg">How does this work?</a>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <!-- Stylized frame illustration -->
+          <svg viewBox="0 0 300 260" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-svg" aria-hidden="true">
+            <!-- Shadow -->
+            <rect x="18" y="18" width="268" height="228" rx="10" fill="rgba(42,26,14,0.12)"/>
+            <!-- Outer frame moulding -->
+            <rect x="10" y="10" width="268" height="228" rx="8" fill="#C4956A" stroke="#8B5E3C" stroke-width="2"/>
+            <!-- Wood grain lines -->
+            <line x1="10" y1="30" x2="278" y2="30" stroke="#B07848" stroke-width="0.5" opacity="0.4"/>
+            <line x1="10" y1="50" x2="278" y2="50" stroke="#B07848" stroke-width="0.5" opacity="0.3"/>
+            <line x1="10" y1="218" x2="278" y2="218" stroke="#B07848" stroke-width="0.5" opacity="0.4"/>
+            <!-- Frame opening (rabbet area) -->
+            <rect x="48" y="44" width="192" height="160" fill="#F0E8DC"/>
+            <!-- Mat board -->
+            <rect x="56" y="52" width="176" height="144" fill="#E4D8C4" stroke="#CEC0A8" stroke-width="0.5"/>
+            <!-- Mat opening -->
+            <rect x="88" y="82" width="112" height="84" fill="#B8C8D8"/>
+            <!-- Sky gradient simulation -->
+            <rect x="88" y="82" width="112" height="40" fill="#7BA8C8"/>
+            <!-- Mountains -->
+            <polygon points="88,166 115,118 142,145 170,110 200,166" fill="#4A6878"/>
+            <!-- Sun / moon -->
+            <circle cx="168" cy="100" r="12" fill="#E8D080" opacity="0.8"/>
+            <!-- Dimension callout lines -->
+            <line x1="10" y1="248" x2="278" y2="248" stroke="#C8952A" stroke-width="1.5" opacity="0.8"/>
+            <line x1="10" y1="244" x2="10" y2="252" stroke="#C8952A" stroke-width="1.5"/>
+            <line x1="278" y1="244" x2="278" y2="252" stroke="#C8952A" stroke-width="1.5"/>
+            <text x="144" y="260" text-anchor="middle" font-size="10" fill="#C8952A" font-family="Inter, sans-serif" font-weight="500">Outer Frame Width</text>
+            <!-- Moulding width callout -->
+            <line x1="283" y1="10" x2="283" y2="238" stroke="#8B5E3C" stroke-width="1" opacity="0.7"/>
+            <line x1="280" y1="10" x2="286" y2="10" stroke="#8B5E3C" stroke-width="1"/>
+            <line x1="280" y1="238" x2="286" y2="238" stroke="#8B5E3C" stroke-width="1"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ HOW IT WORKS ═══ -->
+    <section class="how-section" aria-labelledby="how-heading">
+      <div class="container">
+        <h2 id="how-heading">Three steps to a perfect frame</h2>
+        <div class="steps-grid">
+
+          <div class="step-card">
+            <div class="step-num" aria-hidden="true">1</div>
+            <div class="step-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M5 22L22 5L27 10L10 27L5 22Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <line x1="10" y1="20" x2="13" y2="23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="14" y1="16" x2="17" y2="19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="18" y1="12" x2="21" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Measure your artwork</h3>
+            <p>Grab a ruler and measure your artwork. If a mat is already attached, measure the outside edge of the mat — that's your artwork size for this calculator.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num" aria-hidden="true">2</div>
+            <div class="step-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <rect x="3" y="9" width="26" height="14" rx="2.5" stroke="currentColor" stroke-width="2"/>
+                <line x1="9" y1="9" x2="9" y2="23" stroke="currentColor" stroke-width="1" stroke-dasharray="2,2" opacity="0.6"/>
+                <line x1="16" y1="9" x2="16" y2="23" stroke="currentColor" stroke-width="1" stroke-dasharray="2,2" opacity="0.6"/>
+                <line x1="23" y1="9" x2="23" y2="23" stroke="currentColor" stroke-width="1" stroke-dasharray="2,2" opacity="0.6"/>
+              </svg>
+            </div>
+            <h3>Enter your wood dimensions</h3>
+            <p>Tell us your wood stock: how wide it looks from the front, how thick it is, and the rabbet you plan to route. We explain every term in plain language.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num" aria-hidden="true">3</div>
+            <div class="step-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <rect x="5" y="3" width="22" height="27" rx="3" stroke="currentColor" stroke-width="2"/>
+                <line x1="10" y1="11" x2="22" y2="11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="10" y1="16" x2="22" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="10" y1="21" x2="17" y2="21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="8.5" cy="11" r="1" fill="currentColor"/>
+                <circle cx="8.5" cy="16" r="1" fill="currentColor"/>
+                <circle cx="8.5" cy="21" r="1" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3>Get your cut list</h3>
+            <p>See the exact length for each of your four frame pieces, the rabbet size to route, glazing cut size, and how much wood to buy — all in one place.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ANATOMY ═══ -->
+    <section id="anatomy" class="anatomy-section" aria-labelledby="anatomy-heading">
+      <div class="container">
+        <div class="section-label">Frame Anatomy</div>
+        <h2 id="anatomy-heading">What do all these terms mean?</h2>
+        <p class="section-sub">New to frame making? Tap any term to learn exactly what it is and why it matters for your build.</p>
+
+        <div class="anatomy-layout">
+
+          <!-- Front-view frame anatomy diagram -->
+          <figure class="anatomy-diagram-wrap">
+            <!--
+              Front-view anatomy diagram.
+              Viewbox is wider than the frame to give labels room on all sides.
+              3 external dimension labels + 1 center label. No overlap, no clipping.
+              Left=outer edge, Right=inner edge, Top=front, Bottom=back.
+            -->
+            <svg id="anatomySvg" viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg"
+                 class="anatomy-svg" role="img"
+                 aria-label="Front-view diagram of a picture frame showing face width, frame opening, and outer frame width">
+
+              <!-- Outer frame moulding -->
+              <rect x="70" y="35" width="280" height="228" rx="6" fill="#C4956A" stroke="#8B5E3C" stroke-width="2"/>
+              <line x1="70"  y1="56"  x2="350" y2="56"  stroke="#8B5E3C" stroke-width="0.4" opacity="0.25"/>
+              <line x1="70"  y1="245" x2="350" y2="245" stroke="#8B5E3C" stroke-width="0.4" opacity="0.25"/>
+
+              <!-- Frame opening -->
+              <rect x="110" y="73" width="200" height="152" fill="#F0E8DC"/>
+
+              <!-- Mat board -->
+              <rect x="120" y="83" width="180" height="132" fill="#E4D8C4" stroke="#CEC0A8" stroke-width="0.5"/>
+
+              <!-- Artwork area -->
+              <rect x="152" y="113" width="116" height="72" fill="#B8C8D8"/>
+              <rect x="152" y="113" width="116" height="34" fill="#7BA8C8"/>
+              <polygon points="152,185 178,151 205,167 232,136 268,185" fill="#4A6878"/>
+              <circle cx="216" cy="128" r="10" fill="#E8D080" opacity="0.8"/>
+
+              <!-- ── LABEL 1: Face Width ──
+                   Two matching brackets at the top (left border + right border)
+                   showing it's the same width on every side. -->
+              <line x1="70"  y1="20" x2="110" y2="20" stroke="#7C4A2D" stroke-width="1.5"/>
+              <line x1="70"  y1="14" x2="70"  y2="26" stroke="#7C4A2D" stroke-width="1.5"/>
+              <line x1="110" y1="14" x2="110" y2="26" stroke="#7C4A2D" stroke-width="1.5"/>
+              <text x="90" y="11" text-anchor="middle" font-size="10" fill="#7C4A2D" font-family="Inter, sans-serif" font-weight="600">Face Width</text>
+
+              <line x1="310" y1="20" x2="350" y2="20" stroke="#7C4A2D" stroke-width="1.5"/>
+              <line x1="310" y1="14" x2="310" y2="26" stroke="#7C4A2D" stroke-width="1.5"/>
+              <line x1="350" y1="14" x2="350" y2="26" stroke="#7C4A2D" stroke-width="1.5"/>
+              <text x="330" y="11" text-anchor="middle" font-size="10" fill="#7C4A2D" font-family="Inter, sans-serif" font-weight="600">Face Width</text>
+
+              <!-- ── LABEL 2: Frame Opening ──
+                   Right-side bracket — fully outside the frame, no clipping. -->
+              <line x1="362" y1="73"  x2="362" y2="225" stroke="#3D7A50" stroke-width="1.5"/>
+              <line x1="355" y1="73"  x2="369" y2="73"  stroke="#3D7A50" stroke-width="1.5"/>
+              <line x1="355" y1="225" x2="369" y2="225" stroke="#3D7A50" stroke-width="1.5"/>
+              <text x="372" y="142" dominant-baseline="middle" font-size="10.5" fill="#3D7A50" font-family="Inter, sans-serif" font-weight="600">Frame</text>
+              <text x="372" y="157" dominant-baseline="middle" font-size="10.5" fill="#3D7A50" font-family="Inter, sans-serif" font-weight="600">Opening</text>
+
+              <!-- ── LABEL 3: Outer Frame Width ──
+                   Bottom bracket — same approach as before, works well. -->
+              <line x1="70"  y1="270" x2="350" y2="270" stroke="#C8952A" stroke-width="1.5"/>
+              <line x1="70"  y1="263" x2="70"  y2="277" stroke="#C8952A" stroke-width="1.5"/>
+              <line x1="350" y1="263" x2="350" y2="277" stroke="#C8952A" stroke-width="1.5"/>
+              <text x="210" y="289" text-anchor="middle" font-size="11" fill="#C8952A" font-family="Inter, sans-serif" font-weight="600">Outer Frame Width</text>
+
+              <!-- ── LABEL 4: Artwork + Mat (center) — dark backdrop ensures legibility over varied artwork colors ── -->
+              <rect x="118" y="130" width="184" height="36" rx="4" fill="rgba(20,10,4,0.58)"/>
+              <text x="210" y="144" text-anchor="middle" font-size="11" fill="white" font-family="Inter, sans-serif" font-weight="600">Artwork + Mat</text>
+              <text x="210" y="158" text-anchor="middle" font-size="8.5" fill="white" font-family="Inter, sans-serif">← measure outside edge of your mat →</text>
+
+            </svg>
+            <figcaption class="visually-hidden">Front-view diagram of a picture frame. Labels show: Face Width (the moulding border width, same on all sides), Frame Opening (the visible hole), and Outer Frame Width (the full outside dimension). The center shows the Artwork + Mat area.</figcaption>
+          </figure>
+
+          <!-- Glossary -->
+          <aside class="anatomy-glossary" aria-label="Frame terminology glossary">
+            <h3>Key terms</h3>
+            <dl class="glossary-list">
+
+              <div class="glossary-item" data-zone="moulding">
+                <dt>Face Width</dt>
+                <dd>How wide the frame moulding looks from the front — from the outer edge to the inner edge. A wider face width means a bigger, bolder frame border.</dd>
+              </div>
+
+              <div class="glossary-item" data-zone="frameOpening">
+                <dt>Frame Opening</dt>
+                <dd>The visible rectangular hole in the front of the frame. The glazing and artwork sit behind this opening. Every other dimension is calculated from this.</dd>
+              </div>
+
+              <div class="glossary-item">
+                <dt>Rabbet Overlap</dt>
+                <dd>The lip of the frame that hangs over the edge of the glazing, holding everything in place. Standard is 1/4". This determines how much bigger the frame opening is than the artwork.</dd>
+              </div>
+
+              <div class="glossary-item">
+                <dt>Rabbet Depth</dt>
+                <dd>How deep the L-shaped groove is routed into the back inner edge of the moulding. Must be deep enough to hold your full stack: glazing + art + backing board.</dd>
+              </div>
+
+              <div class="glossary-item">
+                <dt>Stock Thickness</dt>
+                <dd>The front-to-back depth of your raw lumber before any cuts. After routing the rabbet, the remaining wood becomes the front face of your frame.</dd>
+              </div>
+
+              <div class="glossary-item" data-zone="artwork">
+                <dt>Artwork Size (your input)</dt>
+                <dd>For this calculator, enter the full size of your artwork including any attached mat. If your mat is already mounted, measure the outside edge of the mat.</dd>
+              </div>
+
+            </dl>
+          </aside>
+
+        </div>
+
+        <!-- Moulding cross-section diagram -->
+        <div class="cross-section-wrap" aria-labelledby="cross-section-title">
+          <h3 id="cross-section-title">The rabbet — what you're routing</h3>
+          <p>Looking at the <em>end grain</em> of your moulding stock, this is the L-shaped groove you'll route into the inner back corner. The rabbet creates a ledge that holds all your materials and a lip that keeps them in from the front.</p>
+
+          <!-- Two-column layout: SVG on left, material legend on right -->
+          <div class="cross-diagram-layout">
+
+            <figure style="margin:0; flex:1; min-width:240px; max-width:460px;">
+              <!--
+                Rabbet is intentionally exaggerated in proportion so layers are visible.
+                Orientation: left = outer edge, right = inner edge (frame opening side),
+                top = front face, bottom = back of frame.
+                4 dimension labels only — no material text inside SVG.
+              -->
+              <!--
+                ViewBox: 460 × 210. Moulding sits in the left 260px.
+                Right 200px is label space — nothing can crowd.
+                All fonts 11px+. Bracket lines well outside the moulding shape.
+                Rabbet exaggerated (~60% of thickness) so layers are clearly visible.
+              -->
+              <svg viewBox="0 -12 460 222" xmlns="http://www.w3.org/2000/svg" class="cross-svg"
+                   role="img" aria-label="End-grain cross-section of frame moulding showing face width, stock thickness, rabbet depth, and lip overlap.">
+                <defs>
+                  <pattern id="grain2" x="0" y="0" width="8" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(8)">
+                    <path d="M0 2 Q4 0 8 2" stroke="rgba(139,94,60,0.2)" stroke-width="0.6" fill="none"/>
+                  </pattern>
+                  <linearGradient id="woodGrad2" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#D8A878"/>
+                    <stop offset="100%" stop-color="#B87848"/>
+                  </linearGradient>
+                </defs>
+
+                <!--
+                  Moulding L-shape:
+                    Face width  = x: 44 → 264  (220px)
+                    Thickness   = y: 30 → 160  (130px)
+                    Rabbet lip  = x: 210 → 264  (54px)   ← right side
+                    Rabbet depth= y: 82 → 160  (78px)   ← bottom-right notch
+                  Note: rabbet depth is ~60% of thickness — intentionally exaggerated
+                  so the three material layers are legible.
+                -->
+                <path d="M 44,30 L 264,30 L 264,82 L 210,82 L 210,160 L 44,160 Z"
+                      fill="url(#woodGrad2)" stroke="#8B5E3C" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M 44,30 L 264,30 L 264,82 L 210,82 L 210,160 L 44,160 Z"
+                      fill="url(#grain2)"/>
+
+                <!-- Material layers inside the rabbet (x:210→264, y:82→160) -->
+                <!-- Acrylic -->
+                <rect x="210" y="82"  width="54" height="22" fill="#A8D8EA" stroke="#78B8CC" stroke-width="1"/>
+                <!-- Art package -->
+                <rect x="210" y="104" width="54" height="30" fill="#E8D5B7" stroke="#C4A882" stroke-width="1"/>
+                <!-- Backing board -->
+                <rect x="210" y="134" width="54" height="22" fill="#C8B8A8" stroke="#A89888" stroke-width="1"/>
+
+                <!-- ── ORIENTATION: subtle italic labels above and below the moulding ── -->
+                <text x="154" y="20" text-anchor="middle" font-size="10" fill="#9B7B65"
+                      font-family="Inter, sans-serif" font-style="italic">← Front face →</text>
+                <text x="127" y="178" text-anchor="middle" font-size="10" fill="#9B7B65"
+                      font-family="Inter, sans-serif" font-style="italic">← Back →</text>
+
+                <!-- ── LABEL 1: Face Width — top bracket, clear of the "Front face" text ── -->
+                <line x1="44"  y1="8" x2="264" y2="8" stroke="#7C4A2D" stroke-width="1.5"/>
+                <line x1="44"  y1="2" x2="44"  y2="14" stroke="#7C4A2D" stroke-width="1.5"/>
+                <line x1="264" y1="2" x2="264" y2="14" stroke="#7C4A2D" stroke-width="1.5"/>
+                <text x="154" y="5" text-anchor="middle" font-size="11"
+                      fill="#7C4A2D" font-family="Inter, sans-serif" font-weight="600">Face Width</text>
+
+                <!-- ── LABEL 2: Stock Thickness — left bracket with rotated text ── -->
+                <line x1="28" y1="30"  x2="28" y2="160" stroke="#7C4A2D" stroke-width="1.5"/>
+                <line x1="22" y1="30"  x2="34" y2="30"  stroke="#7C4A2D" stroke-width="1.5"/>
+                <line x1="22" y1="160" x2="34" y2="160" stroke="#7C4A2D" stroke-width="1.5"/>
+                <!-- Rotated label centered on the bracket -->
+                <text x="14" y="95" text-anchor="middle" dominant-baseline="middle"
+                      font-size="11" fill="#7C4A2D" font-family="Inter, sans-serif" font-weight="600"
+                      transform="rotate(-90,14,95)">Thickness</text>
+
+                <!-- ── LABEL 3: Rabbet Depth — right bracket, own clear column at x=278 ── -->
+                <line x1="278" y1="82"  x2="278" y2="160" stroke="#A04040" stroke-width="1.5"/>
+                <line x1="271" y1="82"  x2="285" y2="82"  stroke="#A04040" stroke-width="1.5"/>
+                <line x1="271" y1="160" x2="285" y2="160" stroke="#A04040" stroke-width="1.5"/>
+                <text x="288" y="121" dominant-baseline="middle"
+                      font-size="11" fill="#A04040" font-family="Inter, sans-serif" font-weight="600">Rabbet Depth</text>
+
+                <!-- ── LABEL 4: Lip / Overlap — bracket below the lip, clear of the moulding ── -->
+                <line x1="210" y1="172" x2="264" y2="172" stroke="#A04040" stroke-width="1.5"/>
+                <line x1="210" y1="165" x2="210" y2="179" stroke="#A04040" stroke-width="1.5"/>
+                <line x1="264" y1="165" x2="264" y2="179" stroke="#A04040" stroke-width="1.5"/>
+                <text x="237" y="192" text-anchor="middle"
+                      font-size="11" fill="#A04040" font-family="Inter, sans-serif" font-weight="600">Lip (overlap)</text>
+
+              </svg>
+              <figcaption class="visually-hidden">End-grain cross-section of frame moulding. The L-shape shows four labeled dimensions: Face Width (full horizontal span), Stock Thickness (full vertical span), Rabbet Depth (the right-side notch depth), and Lip/Overlap (the horizontal lip at the top of the notch). The notch contains three colored material layers: glazing (blue), art package (tan), and backing board (gray).</figcaption>
+            </figure>
+
+            <!-- Material layer legend — HTML so it can never overlap the SVG -->
+            <div class="cross-legend">
+              <p class="legend-title">What sits in the rabbet (front to back):</p>
+
+              <div class="legend-item">
+                <span class="legend-swatch" style="background:#A8D8EA; border:1px solid #78B8CC;"></span>
+                <div>
+                  <strong>Glazing</strong> <span style="font-weight:normal;color:var(--clr-text-3)">(acrylic or glass)</span>
+                  <span>Typical sheet: 1/8"</span>
+                </div>
+              </div>
+
+              <div class="legend-item">
+                <span class="legend-swatch" style="background:#E8D5B7; border:1px solid #C4A882;"></span>
+                <div>
+                  <strong>Art package</strong>
+                  <span>Mat board + artwork + mounting board — measure yours</span>
+                </div>
+              </div>
+
+              <div class="legend-item">
+                <span class="legend-swatch" style="background:#C8B8A8; border:1px solid #A89888;"></span>
+                <div>
+                  <strong>Backing board</strong>
+                  <span>Hardboard or foam board: typically 1/8"</span>
+                </div>
+              </div>
+
+              <p class="legend-rule">Total stack thickness must be &le; your rabbet depth. The calculator checks this for you.</p>
+              <p class="legend-note">Glazing is cut 1/16" smaller than the frame opening on each side (1/8" total) to allow for thermal movement and handling clearance — the calculator accounts for this automatically.</p>
+            </div>
+
+          </div><!-- /cross-diagram-layout -->
+        </div>
+
+        <!-- ══ How the calculator works — formula breakdown ══ -->
+        <div class="formula-section">
+          <h3 class="formula-heading">How the calculator works</h3>
+          <p class="formula-intro">Every number the calculator gives you traces to one of four formulas. Understanding them makes you a better builder.</p>
+
+          <div class="formula-grid">
+
+            <!-- 1: Frame opening -->
+            <div class="formula-card">
+              <div class="formula-label">① Frame Opening</div>
+              <div class="formula-equation">
+                <span class="f-var">Opening</span>
+                <span class="f-eq">=</span>
+                <span class="f-var">Artwork</span>
+                <span class="f-op">+</span>
+                <span class="f-paren">(</span><span class="f-const">2</span>
+                <span class="f-op">×</span>
+                <span class="f-var">Overlap</span><span class="f-paren">)</span>
+              </div>
+              <p class="formula-note">The rabbet slot is made slightly <em>larger</em> than your mat so the overlap (lip) can grip its edge. The visible window you see through the front equals your original artwork size.</p>
+            </div>
+
+            <!-- 2: Glazing size -->
+            <div class="formula-card">
+              <div class="formula-label">② Glazing Size</div>
+              <div class="formula-equation">
+                <span class="f-var">Glazing</span>
+                <span class="f-eq">=</span>
+                <span class="f-var">Opening</span>
+                <span class="f-op">−</span>
+                <span class="f-paren">(</span><span class="f-const">2</span>
+                <span class="f-op">×</span>
+                <span class="f-frac">1/16″</span><span class="f-paren">)</span>
+              </div>
+              <p class="formula-note">The 1/16″ relief per side (1/8″ total) allows for thermal movement and handling clearance. Applies to both acrylic and glass.</p>
+            </div>
+
+            <!-- 3: Cut length -->
+            <div class="formula-card">
+              <div class="formula-label">③ Cut Length — each piece</div>
+              <div class="formula-equation">
+                <span class="f-var">Cut</span>
+                <span class="f-eq">=</span>
+                <span class="f-var">Opening</span>
+                <span class="f-op">+</span>
+                <span class="f-paren">(</span><span class="f-const">2</span>
+                <span class="f-op">×</span>
+                <span class="f-var">Face&nbsp;Width</span><span class="f-paren">)</span>
+              </div>
+              <p class="formula-note">Measured long-point to long-point for 45° miter joints. Top and bottom pieces use the width opening; left and right pieces use the height opening.</p>
+            </div>
+
+            <!-- 4: Total moulding needed -->
+            <div class="formula-card">
+              <div class="formula-label">④ Total Moulding Needed</div>
+              <div class="formula-equation">
+                <span class="f-group">(2 × top + 2 × side)</span>
+                <span class="f-op">×</span>
+                <span class="f-const">1.25</span>
+              </div>
+              <p class="formula-note">The 25% waste factor covers tearout, mis-cuts, and end-grain loss at each miter — standard allowance for 45° miter work. Reduce to 15% for long, straight stock with no figure.</p>
+            </div>
+
+          </div><!-- /formula-grid -->
+        </div><!-- /formula-section -->
+
+      </div>
+    </section>
+
+    <!-- ═══ CALCULATOR ═══ -->
+    <section id="calculator" class="calc-section" aria-labelledby="calc-heading">
+      <div class="container">
+        <div class="section-label">The Calculator</div>
+        <h2 id="calc-heading">Enter your dimensions</h2>
+
+        <div class="calc-layout">
+
+          <!-- ─── FORM ─── -->
+          <form id="calcForm" class="calc-form" novalidate aria-label="Frame dimension calculator">
+
+            <!-- Group 1: Artwork -->
+            <fieldset class="form-group">
+              <legend>
+                <span class="legend-num" aria-hidden="true">1</span>
+                Your Artwork
+              </legend>
+              <div class="group-note" role="note">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><line x1="8" y1="7" x2="8" y2="11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="5" r="0.75" fill="currentColor"/></svg>
+                <span>Measure the artwork itself. <strong>If a mat is already mounted, measure the outside edge of the mat</strong> — that's your "artwork size" here. The calculator treats the mat as part of the artwork size for this version.</span>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="artWidth">Width <span class="label-sub">(left → right)</span></label>
+                  <div class="input-wrap">
+                    <input type="number" id="artWidth" name="artWidth"
+                           min="0.5" max="200" step="0.0625"
+                           placeholder="e.g. 11" required
+                           aria-required="true">
+                    <span class="unit" aria-label="inches">in</span>
+                  </div>
+                  <span class="error-msg" id="artWidth-err" role="alert" aria-live="polite"></span>
+                </div>
+                <div class="field">
+                  <label for="artHeight">Height <span class="label-sub">(top → bottom)</span></label>
+                  <div class="input-wrap">
+                    <input type="number" id="artHeight" name="artHeight"
+                           min="0.5" max="200" step="0.0625"
+                           placeholder="e.g. 14" required
+                           aria-required="true">
+                    <span class="unit" aria-label="inches">in</span>
+                  </div>
+                  <span class="error-msg" id="artHeight-err" role="alert" aria-live="polite"></span>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Group 2: Wood Stock -->
+            <fieldset class="form-group">
+              <legend>
+                <span class="legend-num" aria-hidden="true">2</span>
+                Your Wood Stock
+              </legend>
+              <div class="group-note" role="note">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><line x1="8" y1="7" x2="8" y2="11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="5" r="0.75" fill="currentColor"/></svg>
+                <span>Describe the raw lumber <em>before</em> any cuts or routing. These are the dimensions of the board as it sits in your shop.</span>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="faceWidth">
+                    Face Width
+                    <button type="button" class="help-btn" data-tip="faceWidth" aria-label="Explain face width">?</button>
+                  </label>
+                  <div class="input-wrap">
+                    <input type="number" id="faceWidth" name="faceWidth"
+                           min="0.5" max="24" step="0.0625"
+                           placeholder="e.g. 2.75" required
+                           aria-required="true"
+                           aria-describedby="faceWidth-hint">
+                    <span class="unit" aria-label="inches">in</span>
+                  </div>
+                  <span class="field-hint" id="faceWidth-hint">How wide the moulding looks from the front</span>
+                  <span class="error-msg" id="faceWidth-err" role="alert" aria-live="polite"></span>
+                </div>
+                <div class="field">
+                  <label for="stockThickness">
+                    Thickness
+                    <button type="button" class="help-btn" data-tip="stockThickness" aria-label="Explain stock thickness">?</button>
+                  </label>
+                  <div class="input-wrap">
+                    <input type="number" id="stockThickness" name="stockThickness"
+                           min="0.25" max="6" step="0.0625"
+                           placeholder="e.g. 0.75" required
+                           aria-required="true"
+                           aria-describedby="stockThickness-hint">
+                    <span class="unit" aria-label="inches">in</span>
+                  </div>
+                  <span class="field-hint" id="stockThickness-hint">Depth of the board — front to back</span>
+                  <span class="error-msg" id="stockThickness-err" role="alert" aria-live="polite"></span>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Group 3: Rabbet -->
+            <fieldset class="form-group">
+              <legend>
+                <span class="legend-num" aria-hidden="true">3</span>
+                Rabbet Details
+              </legend>
+              <div class="group-note" role="note">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><line x1="8" y1="7" x2="8" y2="11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="5" r="0.75" fill="currentColor"/></svg>
+                <span>The <strong>rabbet</strong> is an L-shaped groove routed into the inner back edge of each moulding piece. It creates the ledge where your glazing, artwork, and backing rest — and the overlap (lip) that holds everything in from the front.</span>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="rabbetDepth">
+                    Rabbet Depth
+                    <button type="button" class="help-btn" data-tip="rabbetDepth" aria-label="Explain rabbet depth">?</button>
+                  </label>
+                  <div class="input-wrap">
+                    <input type="number" id="rabbetDepth" name="rabbetDepth"
+                           min="0.125" max="3" step="0.0625"
+                           placeholder="e.g. 0.5" required
+                           aria-required="true"
+                           aria-describedby="rabbetDepth-hint">
+                    <span class="unit" aria-label="inches">in</span>
+                  </div>
+                  <span class="field-hint" id="rabbetDepth-hint">How deep to route the groove</span>
+                  <span class="error-msg" id="rabbetDepth-err" role="alert" aria-live="polite"></span>
+                </div>
+                <div class="field">
+                  <label for="rabbetOverlap">
+                    Rabbet Overlap
+                    <button type="button" class="help-btn" data-tip="rabbetOverlap" aria-label="Explain rabbet overlap">?</button>
+                  </label>
+                  <div class="input-wrap">
+                    <input type="number" id="rabbetOverlap" name="rabbetOverlap"
+                           min="0.0625" max="1" step="0.0625"
+                           value="0.25"
+                           aria-describedby="rabbetOverlap-hint">
+                    <span class="unit" aria-label="inches">in</span>
+                  </div>
+                  <span class="field-hint" id="rabbetOverlap-hint">Overlap that covers the glazing edge — standard is 1/4"</span>
+                  <span class="error-msg" id="rabbetOverlap-err" role="alert" aria-live="polite"></span>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Group 4: Materials Stack -->
+            <fieldset class="form-group">
+              <legend>
+                <span class="legend-num" aria-hidden="true">4</span>
+                Materials Stack
+              </legend>
+              <div class="group-note" role="note">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><line x1="8" y1="7" x2="8" y2="11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="5" r="0.75" fill="currentColor"/></svg>
+                <span>Everything that sits inside the rabbet, stacked from front to back. The calculator checks that your rabbet is deep enough to hold it all. Enter <code>0</code> for any layer you're not using.</span>
+              </div>
+              <div class="field-row three-up">
+                <div class="field">
+                  <label for="glazingThick">Glazing Thickness</label>
+                  <div class="input-wrap">
+                    <input type="number" id="glazingThick" name="glazingThick"
+                           min="0" max="0.5" step="0.0625"
+                           value="0.125"
+                           aria-describedby="glazingThick-hint">
+                    <span class="unit" aria-label="inches">in</span>
+                  </div>
+                  <span class="field-hint" id="glazingThick-hint">Standard: 1/8" (acrylic or glass)</span>
+                </div>
+                <div class="field">
+                  <label for="artPackageThick">
+                    Art Thickness
+                    <button type="button" class="help-btn" data-tip="artPackageThick" aria-label="Explain art package thickness">?</button>
+                  </label>
+                  <div class="input-wrap">
+                    <input type="number" id="artPackageThick" name="artPackageThick"
+                           min="0" max="2" step="0.0625"
+                           placeholder="e.g. 0.125"
+                           aria-describedby="artPackageThick-hint">
+                    <span class="unit" aria-label="inches">in</span>
+                  </div>
+                  <span class="field-hint" id="artPackageThick-hint">Mat + artwork + mounting board, measured together</span>
+                </div>
+                <div class="field">
+                  <label for="backingThick">Backing Thickness</label>
+                  <div class="input-wrap">
+                    <input type="number" id="backingThick" name="backingThick"
+                           min="0" max="0.5" step="0.0625"
+                           value="0.125"
+                           aria-describedby="backingThick-hint">
+                    <span class="unit" aria-label="inches">in</span>
+                  </div>
+                  <span class="field-hint" id="backingThick-hint">Hardboard or foam board: typically 1/8"</span>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary btn-lg" id="calcBtn">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                  <path d="M9 1L17 9L9 17M1 9H17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Calculate My Frame
+              </button>
+              <button type="reset" class="btn btn-ghost" id="resetBtn">Clear Form</button>
+            </div>
+
+          </form>
+
+          <!-- ─── LIVE PREVIEW PANEL ─── -->
+          <div class="preview-panel" aria-label="Live moulding profile preview" aria-live="polite" aria-atomic="true">
+            <div class="preview-header">
+              <div class="preview-header-top">
+                <h3>Moulding Profile Preview</h3>
+                <p>Updates as you type</p>
+              </div>
+              <div id="stackStatus" class="stack-status" hidden aria-live="polite"></div>
+            </div>
+            <div class="preview-body" id="previewDiagram">
+              <div class="preview-empty">
+                <svg width="56" height="56" viewBox="0 0 56 56" fill="none" aria-hidden="true">
+                  <path d="M8 8 L40 8 L40 32 L32 32 L32 48 L8 48 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none" opacity="0.3"/>
+                </svg>
+                <p>Enter your wood dimensions<br>above to see the moulding<br>cross-section here.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ RESULTS ═══ -->
+    <section id="results" class="results-section" hidden
+             aria-labelledby="results-heading" aria-live="polite">
+      <div class="container">
+        <div class="results-head">
+          <div class="section-label">Your Dimensions</div>
+          <h2 id="results-heading">Frame Calculation Results</h2>
+          <p class="section-sub">These are the exact dimensions for your build. Print this page or keep it open in the shop.</p>
+          <button class="btn btn-ghost btn-sm print-btn" onclick="window.print()" aria-label="Print these results">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+              <path d="M3.5 5V1.5H11.5V5M3.5 10.5H1.5V6.5H13.5V10.5H11.5M3.5 10.5V13.5H11.5V10.5M3.5 10.5H11.5" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+            </svg>
+            Print Results
+          </button>
+        </div>
+
+        <div id="resultsContent" class="results-grid">
+          <!-- Populated by calculator.js -->
+        </div>
+
+        <div class="results-footer">
+          <button class="btn btn-outline"
+                  onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">
+            Edit Inputs
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══ TOOLTIP MODAL ═══ -->
+  <div id="tooltipOverlay" class="tooltip-backdrop" hidden aria-hidden="true"></div>
+  <div id="tooltipModal" class="tooltip-modal" role="dialog" aria-modal="true"
+       aria-labelledby="tipTitle" hidden>
+    <div class="tooltip-inner">
+      <button class="tooltip-close" id="tipClose" aria-label="Close">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M2 2L12 12M12 2L2 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <h4 class="tooltip-title" id="tipTitle"></h4>
+      <p class="tooltip-body" id="tipBody"></p>
+      <div class="tooltip-visual" id="tipVisual" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>Frame Calculator &mdash; measure once, cut right.</p>
+    </div>
+  </footer>
+
+  <script src="calculator.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Node (if you ever add npm tooling)
+node_modules/
+npm-debug.log*
+
+# Temp / OS
+Thumbs.db
+*.log
+*.tmp
+
+# Internal planning docs (optional — uncomment to keep off GitHub)
+# future-ideas.md
+# knowledge-map-a.txt
+# knowledge-map-b.txt

@@ -1,0 +1,128 @@
+Getting picture frame measurements wrong is the most common — and most expensive — DIY framing mistake. Cut the glass a hair too wide and it cracks. Order the mat too small and it covers your artwork. This calculator gives you every dimension you need in one step: frame opening, mat opening, glass cut size, and outer frame size.
+
+To measure a picture frame correctly, you need four numbers: your artwork size, the mat border width, the rabbet overlap, and the glass clearance. Each dimension in the frame stack is derived from the artwork size outward — not guessed from the frame’s outer edge inward.
+
+What you will know after reading this
+The exact formula for every frame dimension
+How rabbet overlap, mat border, and glass clearance interact
+How to avoid the three most common sizing errors
+How to use the calculator for any artwork size
+Quick Answer: How to measure a picture frame
+Measure your artwork width and height. The frame opening equals artwork size plus twice the rabbet overlap (typically 0.25 in per side). The mat opening equals artwork size minus twice the mat overlap (typically 0.25 in per side). Glass cuts to the frame opening minus 1/16 in per side. Use the calculator below for instant results.
+TL;DR – Quick Summary
+Frame opening = artwork size + (2 × rabbet overlap), typically +0.5 in per dimension.
+Mat opening = artwork size − (2 × mat overlap), typically −0.5 in per dimension.
+Glass cuts 1/8 in smaller than the frame opening (1/16 in clearance per side).
+Rabbet overlap is the frame lip that hides the glass edge — standard is 0.25 in.
+Outer frame size = frame opening + (2 × moulding width) — varies by frame profile.
+Always measure artwork first; never measure from the frame’s outer edge inward.
+Dimension	Typical Value / Rule	Purpose
+Rabbet overlap	0.25 in (1/4 in)	Frame lip that holds glass in place
+Glass clearance	1/16 in per side (1/8 in total)	Prevents cracking from thermal expansion
+Mat overlap	0.25 in per side (standard)	Hides photo border, holds artwork
+Mat border width	1.5–3 in (decorative)	Visual breathing room around artwork
+Rabbet depth	0.5–0.75 in	Holds full stack: glass + mat + art + backing
+🖼
+Picture Frame Measurement Calculator
+Enter your artwork size and framing preferences — get all dimensions instantly.
+
+Artwork Width
+
+The actual width of your photo or artwork
+11
+
+in
+Artwork Height
+
+The actual height of your photo or artwork
+13
+
+in
+Mat Border Width
+
+Visible mat width on each side (0 = no mat)
+e.g. 2
+
+in
+Rabbet Overlap
+
+Frame lip over glass edge (typically 0.25 in)
+.25
+
+in
+Moulding Width
+
+Width of the frame profile (for outer size)
+2.75
+
+in
+Mat Overlap on Artwork
+
+Mat lip over artwork edge per side (typ. 0.25 in)
+.25
+
+in
+Calculate
+
+Reset
+⚠️ Mat Border Width must be 0 or greater.
+
+How to Use This Picture Frame Measurement Calculator
+Follow these four steps and you will have every dimension you need before you buy or cut anything.
+
+Measure your artwork — use a ruler or tape measure on the actual artwork, not the packaging. Record width and height in inches.
+Enter mat border width — this is the visible mat width you want on each side. A 2-inch border is a common decorative choice. Enter 0 if you are not using a mat.
+Enter rabbet overlap — the standard is 0.25 inches. Check your specific frame moulding if you are unsure; measure the lip with calipers.
+Enter moulding width — measure the face width of the frame profile from the outer edge to the inner edge. This gives you the outer frame size for ordering custom frames.
+Click Calculate — the result card shows all eight dimensions with fractional inch equivalents and a numbered solution you can hand to a glass cutter or framer.
+What Is a Frame Opening — and Why Does It Drive Every Other Measurement?
+The frame opening is the rectangular hole in the front of the frame through which you see the artwork. Every other dimension in a picture frame is derived from it.
+
+Think of a picture frame as a stack of layers, each sized relative to the one inside it:
+
+Frame Layer Diagram (cross-section, front view)
+  ┌─────────────────────────────────────────┐  ← Outer Frame Edge
+  │  ░░░░░ MOULDING (frame profile) ░░░░░  │
+  │  ┌───────────────────────────────────┐  │  ← Frame Opening (rabbet lip edge)
+  │  │  ▓▓▓▓▓▓ MAT BOARD ▓▓▓▓▓▓▓▓▓▓▓  │  │
+  │  │  ┌─────────────────────────────┐  │  │  ← Mat Opening (artwork reveal)
+  │  │  │                             │  │  │
+  │  │  │       ARTWORK / PHOTO       │  │  │
+  │  │  │                             │  │  │
+  │  │  └─────────────────────────────┘  │  │
+  │  │  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  │  │
+  │  └───────────────────────────────────┘  │
+  │  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  │
+  └─────────────────────────────────────────┘
+
+  Glass sits between the moulding rabbet lip and the mat/artwork.
+  Glass width = Frame Opening − 1/8 in (1/16 in clearance each side).
+  
+The rabbet is the stepped groove on the inner back edge of the moulding. Its lip — the part you see from the front — overlaps the glass edge by the rabbet overlap amount (typically 0.25 in). That overlap is what holds everything in and defines the visible frame opening.
+
+The Picture Frame Measurement Formulas Explained
+These are the exact formulas the calculator uses. Every one is derived from standard US framing industry practice.
+
+Related Posts
+Deck Stain Calculator: How Much Stain Do You Need?
+Use this free deck stain calculator to find exactly how many gallons of stain you…
+
+Flooring Calculator: Compute Area, Cost & Waste
+Use this free flooring computation calculator to find exact square footage, material quantity, waste allowance,…
+
+Pipe Weight Calculator – Steel, PVC & More
+Use this free pipe weight calculator to find the exact weight of any pipe —…
+
+Without a mat:
+
+Frame Opening = Artwork Size + (2 × Rabbet Overlap)
+
+With a mat:
+
+Frame Opening = Artwork Size + (2 × Mat Border) + (2 × Rabbet Overlap)
+
+Mat Opening = Artwork Size − (2 × Mat Overlap on Artwork)
+
+Glass Cut Size = Frame Opening − (2 × 1/16 in)
+
+Outer Frame Size = Frame Opening + (2 × Moulding Width)
