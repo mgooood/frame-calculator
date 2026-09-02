@@ -1061,6 +1061,17 @@ p { max-width: 68ch; }
 /* Dimension display */
 .dim-block { display: flex; align-items: flex-start; gap: var(--sp-5); flex-wrap: wrap; }
 
+.dim-sub-label {
+  font-size: var(--text-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-text-2);
+  margin-bottom: 4px;
+}
+.dim-sub-note {
+  font-weight: var(--fw-normal);
+  color: var(--clr-text-3);
+}
+
 .dim-item { display: flex; flex-direction: column; gap: 4px; }
 
 .dim-label {

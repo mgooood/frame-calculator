@@ -5,8 +5,9 @@
 'use strict';
 
 /* ─── Constants ──────────────────────────────── */
-const GLAZING_CLEARANCE = 1 / 16;  // inches per side — applies to both glass and acrylic
-const WASTE_FACTOR    = 1.25;    // 25 % waste for miter cut losses
+const GLAZING_CLEARANCE  = 1 / 16;  // inches per side — applies to both glass and acrylic
+const FITTING_ALLOWANCE  = 2 * GLAZING_CLEARANCE;  // 1/8" total — PPFA standard fitting allowance
+const WASTE_FACTOR       = 1.25;    // 25 % waste for miter cut losses
 
 /* ─── Tooltip content ────────────────────────── */
 const TIPS = {
@@ -41,8 +42,8 @@ const TIPS = {
     title: 'Rabbet Overlap (the Lip)',
     body: [
       'The width of the lip that remains after routing the rabbet. This lip overlaps the edge of the glazing from the front, holding everything inside the frame.',
-      'Standard is 1/4" (0.25"). Going narrower risks the glazing falling through; going wider reduces the visible frame opening slightly.',
-      'The frame opening = artwork size + (2 × rabbet overlap), so a 0.25" overlap adds 0.5" to each dimension.',
+      'Standard is 1/4" (0.25"). Going narrower risks the glazing falling through; going wider covers more of the artwork edges.',
+      'The sight opening = rabbet opening − (2 × lip) = (artwork + 1/8") − (2 × lip). With a standard 1/4" lip, the lip hides 1/4" of the artwork edge on each side.',
     ].join('\n\n'),
     visual: (fw, sT, rD, rO) => makeMouldingSVG(fw || 2.75, sT || 0.75, rD || 0.5, rO || 0.25, 0.125, 0, 0.125, 'rabbetOverlap'),
   },
@@ -146,17 +147,22 @@ function calculate(inp) {
   const { artW, artH, faceWidth, stockThick, rabbetDepth, rabbetOverlap,
           acrylicThick, artPackageThick, backingThick } = inp;
 
-  // Frame opening: visible hole — artwork size + 2 × lip on each axis
-  const frameOpenW = artW + 2 * rabbetOverlap;
-  const frameOpenH = artH + 2 * rabbetOverlap;
+  // Frame opening (rabbet opening): PPFA standard — 1/8" fitting allowance over artwork
+  const frameOpenW = artW + FITTING_ALLOWANCE;
+  const frameOpenH = artH + FITTING_ALLOWANCE;
 
-  // Glazing: cut 1/16" smaller per side than the frame opening (thermal clearance)
+  // Sight opening: what's visible through the front (lip covers the art edges)
+  const sightOpenW = frameOpenW - 2 * rabbetOverlap;
+  const sightOpenH = frameOpenH - 2 * rabbetOverlap;
+
+  // Glazing: rabbet opening minus clearance per side — equals artwork size for standard 1/8" allowance
   const glazingW = frameOpenW - 2 * GLAZING_CLEARANCE;
   const glazingH = frameOpenH - 2 * GLAZING_CLEARANCE;
 
   // Outer frame (long-point to long-point for 45° miter)
-  const outerW = frameOpenW + 2 * faceWidth;
-  const outerH = frameOpenH + 2 * faceWidth;
+  // = sight opening + 2 × face width = art + 1/8" + 2×(face − lip)
+  const outerW = sightOpenW + 2 * faceWidth;
+  const outerH = sightOpenH + 2 * faceWidth;
 
   // Cut list
   const cutList = [
@@ -178,6 +184,7 @@ function calculate(inp) {
 
   return {
     frameOpenW, frameOpenH,
+    sightOpenW, sightOpenH,
     glazingW,   glazingH,
     outerW,     outerH,
     cutList,
@@ -427,19 +434,25 @@ function dimPair(w, labelW, h, labelH) {
 
 function renderResults(result) {
   const {
-    frameOpenW, frameOpenH, glazingW, glazingH, outerW, outerH,
+    frameOpenW, frameOpenH, sightOpenW, sightOpenH,
+    glazingW, glazingH, outerW, outerH,
     cutList, totalCutIn, linearFt, boardFt,
     totalStack, stackFits, stackGap,
     glazingThick, artPackageThick, backingThick,
     rabbetOverlap, rabbetDepth,
   } = result;
 
-  /* Card 1 — Frame Opening */
-  const c1 = card(ICONS.frameOpen, 'Frame Opening', 'The visible hole in the front of your frame',
-    dimWH(frameOpenW, frameOpenH));
+  /* Card 1 — Frame Opening (rabbet opening + sight opening) */
+  const c1 = card(ICONS.frameOpen, 'Frame Opening', 'Inner back opening (rabbet) + visible front opening',
+    `<div>
+      <div class="dim-sub-label">Rabbet opening <span class="dim-sub-note">— artwork drops into this (back of frame)</span></div>
+      ${dimWH(frameOpenW, frameOpenH)}
+      <div class="dim-sub-label" style="margin-top:0.75rem">Sight opening <span class="dim-sub-note">— visible through the front (lip covers ${toFraction(rabbetOverlap)} of art on each side)</span></div>
+      ${dimWH(sightOpenW, sightOpenH)}
+    </div>`);
 
   /* Card 2 — Glazing Cut Size */
-  const c2 = card(ICONS.acrylic, 'Glazing Cut Size', '1/16" clearance per side — allows for thermal movement',
+  const c2 = card(ICONS.acrylic, 'Glazing Cut Size', 'Cut glass/acrylic to your artwork dimensions — 1/16" clearance per side is built in',
     dimWH(glazingW, glazingH));
 
   /* Card 3 — Outer Frame Size */
